@@ -9,18 +9,57 @@
     <header><h1>Test your knowledges</h1></header>
     <main>
       <h2>Give the good answer...</h2>
-      <section></section>
+      <section id="translate">
+        <div>
+          <p>English word</p>
+          <p id="word"></p>
+        </div>
+        <div>
+          <p>Translate to ...</p>
+          <input type="text" placeholder="type here your answer" id="answer" />
+        </div>
+      </section>
       <script>
+        function mot() {
+          console.log('genere mot');
+          let nouveau_number = Math.round(
+            Math.random() * (vocabulaire.length - 1)
+          );
+          if (nouveau_number == number) mot();
+          else number = nouveau_number;
+          console.log(number);
+          for (i in vocabulaire[number]) {
+            console.log(i);
+            word.innerText = i;
+            reponse = vocabulaire[number][i];
+          }
+        }
+        let number = 0;
+        let vocabulaire;
         var requestURL = 'vocabulary.json';
         var request = new XMLHttpRequest();
+        let word = document.querySelector('#word');
+        let answer = document.querySelector('#answer');
+        let reponse;
         request.open('GET', requestURL);
         request.responseType = 'json';
         request.send();
 
         request.onload = function() {
-          var vocabulaire = request.response;
+          vocabulaire = request.response;
           console.log(vocabulaire);
+          mot();
         };
+
+        answer.addEventListener('keypress', function(evt) {
+          if (evt.key == 'Enter') {
+            console.log(this.value + ' == ' + reponse);
+            if (this.value == reponse) {
+              answer.value = '';
+              mot();
+            }
+          }
+        });
       </script>
     </main>
   </body>
