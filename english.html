@@ -10,6 +10,18 @@
     <main>
       <h2>Give the good answer...</h2>
       <section></section>
+      <script>
+        var requestURL = 'vocabulary.json';
+        var request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+
+        request.onload = function() {
+          var vocabulaire = request.response;
+          console.log(vocabulaire);
+        };
+      </script>
     </main>
   </body>
 </html>
