@@ -56,6 +56,26 @@ h2 {
 #word {
   border-bottom: 8px solid transparent;
 }
+@keyframes mauvais {
+  from {
+    border-bottom: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+  to {
+    border-bottom: 2px solid grey;
+    background-color: white;
+  }
+}
+@keyframes bon {
+  from {
+    border-bottom: 2px solid green;
+    background-color: rgba(0, 255, 0, 0.2);
+  }
+  to {
+    border-bottom: 2px solid grey;
+    background-color: white;
+  }
+}
 #answer {
   display: block;
   padding: 1rem;

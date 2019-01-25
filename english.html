@@ -52,11 +52,16 @@
         };
 
         answer.addEventListener('keypress', function(evt) {
+          answer.style.animation = '';
           if (evt.key == 'Enter') {
             console.log(this.value + ' == ' + reponse);
+
             if (this.value == reponse) {
               answer.value = '';
               mot();
+              answer.style.animation = 'bon 2s ease';
+            } else {
+              answer.style.animation = 'mauvais 2s ease';
             }
           }
         });
