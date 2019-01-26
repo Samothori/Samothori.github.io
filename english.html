@@ -57,7 +57,7 @@
           if (evt.key == 'Enter') {
             console.log(this.value + ' == ' + reponse);
             tentative--;
-            if (this.value == reponse && tentative == 0) {
+            if (this.value == reponse || tentative == 0) {
               answer.value = '';
               if (tentative == 0) {
                 answer.value = reponse;
