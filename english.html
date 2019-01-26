@@ -67,9 +67,10 @@
               answer.value = '';
               if (tentative == 0) {
                 answer.value = reponse;
+              } else {
+                mot();
                 tentative = 3;
               }
-              mot();
               answer.style.animation = 'bon 2s ease';
             } else {
               answer.style.animation = 'mauvais 2s ease';
