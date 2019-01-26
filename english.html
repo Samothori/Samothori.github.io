@@ -62,8 +62,8 @@
           if (evt.key == 'Enter') {
             console.log(this.value + ' == ' + reponse);
             console.log(tentative);
-            if (this.value == reponse || tentative == 1) {
-              if (this.value == reponse) {
+            if (this.value.trim().toLowerCase() == reponse || tentative == 1) {
+              if (this.value.trim().toLowerCase() == reponse) {
                 mot();
                 answer.value = '';
                 tentative = 3;
