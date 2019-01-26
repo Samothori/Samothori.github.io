@@ -8,14 +8,14 @@
   <body>
     <header><h1>Test your knowledges</h1></header>
     <main>
-      <h2>Give the good answer...</h2>
+      <h2>Give the good answer !</h2>
       <section id="translate">
         <div>
           <p>English word</p>
           <p id="word"></p>
         </div>
         <div>
-          <p>Translate to ...</p>
+          <p>translates to ...</p>
           <input
             type="text"
             placeholder="type here your answer"
@@ -61,22 +61,32 @@
           answer.style.animation = '';
           if (evt.key == 'Enter') {
             console.log(this.value + ' == ' + reponse);
-            tentative--;
-            tentatives_span.innerText = tentative;
-            if (this.value == reponse || tentative == 0) {
-              answer.value = '';
-              if (tentative == 0) {
-                answer.value = reponse;
-              } else {
+            console.log(tentative);
+            if (this.value == reponse || tentative == 1) {
+              if (this.value == reponse) {
                 mot();
+                answer.value = '';
                 tentative = 3;
               }
+              if (tentative == 1) {
+                answer.value = reponse;
+                tentative = 3;
+                setTimeout(function() {
+                  mot();
+                  answer.value = '';
+                }, 1500);
+              }
+
               answer.style.animation = 'bon 2s ease';
             } else {
+              tentative--;
               answer.style.animation = 'mauvais 2s ease';
             }
+
+            tentatives_span.innerText = tentative;
           }
         });
+        tentatives_span.innerText = tentative;
       </script>
     </main>
   </body>
