@@ -16,7 +16,11 @@
         </div>
         <div>
           <p>Translate to ...</p>
-          <input type="text" placeholder="type here your answer" id="answer" />
+          <input
+            type="text"
+            placeholder="type here your answer"
+            id="answer"
+          /><span id="tentatives"></span>
         </div>
       </section>
       <script>
@@ -40,6 +44,7 @@
         var request = new XMLHttpRequest();
         let word = document.querySelector('#word');
         let answer = document.querySelector('#answer');
+        let tentatives_span = document.querySelector('#tentatives');
         let tentative = 3;
         let reponse;
         request.open('GET', requestURL);
@@ -57,6 +62,7 @@
           if (evt.key == 'Enter') {
             console.log(this.value + ' == ' + reponse);
             tentative--;
+            tentatives_span.innerText = tentative;
             if (this.value == reponse || tentative == 0) {
               answer.value = '';
               if (tentative == 0) {
