@@ -18,7 +18,6 @@
   { "attempt": "tentative" },
   { "to drop": "laisser tomber" },
   { "to drop out": "abandonner" },
-  { "hinder": "empêcher" },
   { "otherwise": "autrement" },
   { "wise": "sage" },
   { "outlay": "dépenses" },
@@ -59,5 +58,18 @@
   { "goat": "chèvre" },
   { "encounter": "rencontre" },
   { "vow": "voeu" },
-  { "vowed": "faire voeu" }
+  { "vowed": "faire voeu" },
+  { "wealth": "richesse" },
+  { "grouchy": "grognon" },
+  { "rinning noze": "le nez qui coule" },
+  { "take up sport": "faire du sport" },
+  { "election bid": "candidature électorale" },
+  { "grow up": "grandir" },
+  { "hardships": "difficultés" },
+  { "scrapped": "se débarrasser de" },
+  { "to grip": "saisir" },
+  { "the rally": "le ralliement" },
+  { "wage": "salaire" },
+  { "witch": "sorcière" },
+  { "scarf": "foulard" }
 ]
