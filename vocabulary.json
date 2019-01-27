@@ -78,5 +78,10 @@
   { "dressing": "vinaigrette" },
   { "murky": "nuageux" },
   { "punt": "barque" },
-  { "trust": "confiance" }
+  { "trust": "confiance" },
+  { "trap": "piège" },
+  { "trapped": "piégé" },
+  { "sight": "vue" },
+  { "insight": "perspicacité" },
+  { "we owe it": "nous le devons" }
 ]
