@@ -71,5 +71,12 @@
   { "the rally": "le ralliement" },
   { "wage": "salaire" },
   { "witch": "sorcière" },
-  { "scarf": "foulard" }
+  { "scarf": "foulard" },
+  { "looting": "pillage" },
+  { "to loot": "piller" },
+  { "cloakroom": "vestiaire" },
+  { "dressing": "vinaigrette" },
+  { "murky": "nuageux" },
+  { "punt": "barque" },
+  { "trust": "confiance" }
 ]

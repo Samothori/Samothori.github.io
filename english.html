@@ -9,6 +9,16 @@
     <header><h1>Test your knowledges</h1></header>
     <main>
       <h2>Give the good answer !</h2>
+      <div id="choix">
+        <label
+          ><input type="radio" name="langue" value="en" />English to
+          french</label
+        >
+        <label
+          ><input type="radio" name="langue" value="fr" />French to
+          english</label
+        >
+      </div>
       <section id="translate">
         <div>
           <p>English word</p>
@@ -24,7 +34,7 @@
         </div>
       </section>
       <script>
-        function mot() {
+        function mot(langue = 'en') {
           console.log('genere mot');
           let nouveau_number = Math.round(
             Math.random() * (vocabulaire.length - 1)
@@ -34,8 +44,14 @@
           console.log(number);
           for (i in vocabulaire[number]) {
             console.log(i);
-            word.innerText = i;
-            reponse = vocabulaire[number][i];
+            if (langue == 'en') {
+              word.innerText = i;
+              reponse = vocabulaire[number][i];
+            }
+            if (langue == 'fr') {
+              word.innerText = vocabulaire[number][i];
+              reponse = i;
+            }
           }
         }
         let number = 0;
@@ -47,6 +63,7 @@
         let tentatives_span = document.querySelector('#tentatives');
         let tentative = 3;
         let reponse;
+        let langue = 'en';
         request.open('GET', requestURL);
         request.responseType = 'json';
         request.send();
@@ -56,6 +73,18 @@
           console.log(vocabulaire);
           mot();
         };
+        document
+          .querySelector("input[value='en']")
+          .addEventListener('click', function(evt) {
+            langue = 'en';
+            mot(langue);
+          });
+        document
+          .querySelector("input[value='fr']")
+          .addEventListener('click', function(evt) {
+            langue = 'fr';
+            mot(langue);
+          });
 
         answer.addEventListener('keypress', function(evt) {
           answer.style.animation = '';
@@ -64,7 +93,7 @@
             console.log(tentative);
             if (this.value.trim().toLowerCase() == reponse || tentative == 1) {
               if (this.value.trim().toLowerCase() == reponse) {
-                mot();
+                mot(langue);
                 answer.value = '';
                 tentative = 3;
               }
@@ -72,7 +101,7 @@
                 answer.value = reponse;
                 tentative = 3;
                 setTimeout(function() {
-                  mot();
+                  mot(langue);
                   answer.value = '';
                 }, 1500);
               }
