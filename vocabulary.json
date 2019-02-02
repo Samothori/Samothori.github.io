@@ -58,7 +58,7 @@
   { "goat": "chèvre" },
   { "encounter": "rencontre" },
   { "vow": "voeu" },
-  { "vowed": "faire voeu" },
+  { "vowed": "vouer" },
   { "wealth": "richesse" },
   { "grouchy": "grognon" },
   { "rinning noze": "le nez qui coule" },
@@ -93,5 +93,16 @@
   { "thread": "fil" },
   { "tread": "bande de roulement" },
   { "mill": "moulin" },
-  { "rape": "viol" }
+  { "rape": "viol" },
+  { "slaughter": "abattage" },
+  { "clinging": "accroché" },
+  { "custody": "garde" },
+  { "convicted": "condamné" },
+  { "to convict": "condamner" },
+  { "provided": "à condition que" },
+  { "snoop": "fouiner" },
+  { "tremendous": "énorme" },
+  { "to harm": "nuire" },
+  { "instance": "exemple" },
+  { "curbing": "freiner" }
 ]
