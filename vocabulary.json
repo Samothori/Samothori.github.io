@@ -82,7 +82,6 @@
   { "trap": "piège" },
   { "trapped": "piégé" },
   { "sight": "vue" },
-  { "insight": "perspicacité" },
   { "we owe it": "nous le devons" },
   { "to abort": "avorter" },
   { "unrequited": "non partagé" },
@@ -140,5 +139,9 @@
   { "willing": "prêt" },
   { "catch up": "rattraper" },
   { "nowadays": "de nos jours" },
-  { "to dump": "déverser" }
+  { "to dump": "déverser" },
+  { "in order to": "afin de" },
+  { "so that": "de sorte que" },
+  { "insight": "aperçu" }
+  
 ]
