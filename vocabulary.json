@@ -216,5 +216,7 @@
   { "coat of arm": "blason" },
   { "motto": "devise" },
   { "fate": "sort" },
-  { "to tie": "attacher" }
+  { "to tie": "attacher" },
+  { "landlord": "propriétaire" },
+  { "to wander": "flâner" }
 ]
