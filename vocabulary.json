@@ -202,7 +202,7 @@
   { "to withdraw": "se désister" },
   { "grim": "sinistre" },
   { "chimes": "carillons" },
-  { "réassuring": "rassurants" },
+  { "reassuring": "rassurants" },
   { "peal": "carillonner" },
   { "stateroom": "cabine" },
   { "climb aboard": "monter à bord" },
@@ -293,5 +293,15 @@
   { "cushions": "coussins" },
   { "to wrestle": "lutter" },
   { "to come of age": "devenir majeur" },
-  { "spree": "fête" }
+  { "spree": "fête" },
+  { "to mend": "réparer" },
+  { "mandatory": "obligatoire" },
+  { "parental advisory": "contrôle parental" },
+  { "advisory": "consultatif" },
+  { "to bend": "plier" },
+  { "to dive": "plonger" },
+  { "drowning": "noyade" },
+  { "awash": "innondé" },
+  { "helmet": "casque" },
+  { "shelter": "abri" }
 ]
