@@ -316,7 +316,7 @@
   { "to marvel": "s'émerveiller" },
   { "to unfold": "déplier" },
   { "to soothe": "apaiser" },
-  { "weary": "fatigué" },
+  { "weary": "se lasser" },
   { "renewal": "renouvellement" },
   { "ordeal": "supplice" },
   { "dumpling": "boulette" },
@@ -326,10 +326,11 @@
   { "tight": "serré" },
   { "tightly": "fermement" },
   { "to tightle": "serrer" },
-  { "numb": "engourdi"},
-  { "grumpy": "grincheux"},
-  { "tense": "tendu"},
-  { "tens": "dizaine"},
-  { "vessel": "navire"},
-  { "thwarted": "contrarié"}
+  { "numb": "engourdi" },
+  { "grumpy": "grincheux" },
+  { "tense": "tendu" },
+  { "tens": "dizaine" },
+  { "vessel": "navire" },
+  { "thwarted": "contrarié" },
+  { "blueprint": "plan" }
 ]
