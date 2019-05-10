@@ -247,7 +247,7 @@
   { "downriver": "en aval" },
   { "to undergo": "subir" },
   { "the brink": "le bord" },
-  { "repeal": "l'annulation'" },
+  { "repeal": "l'annulation" },
   { "poaching": "braconnage" },
   { "a spate of": "une série de" },
   { "stances": "position" },
@@ -390,5 +390,14 @@
   { "sequentially": "dans la suite" },
   { "subsequently": "par la suite" },
   { "consequently": "par conséquent" },
-  { "to show off": "frimer" }
+  { "to show off": "frimer" },
+  { "a bunch of": "un tas de" },
+  { "raunchy": "torride" },
+  { "chills": "frissons" },
+  { "to hustle": "bousculer" },
+  { "hustle": "bousculade" },
+  { "to mourn": "faire le deuil" },
+  { "mourning": "deuil" },
+  { "to process": "traiter" },
+  { "prospect": "perspective" }
 ]
