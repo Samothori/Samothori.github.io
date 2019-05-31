@@ -255,6 +255,7 @@
   { "tenured": "titulaire" },
   { "on behalf": "au nom de" },
   { "to stem": "enrayer" },
+  { "stem": "tige" },
   { "to overstep": "dépasser" },
   { "to bail out": "renflouer" },
   { "a raft": "radeau" },
@@ -399,5 +400,19 @@
   { "to mourn": "faire le deuil" },
   { "mourning": "deuil" },
   { "to process": "traiter" },
-  { "prospect": "perspective" }
+  { "prospect": "perspective" },
+  { "convenient": "pratique" },
+  { "to hold back": "retenir" },
+  { "neat": "soigné" },
+  { "takeover": "prendre le contrôle" },
+  { "incentive": "motivation" },
+  { "astounding": "étonnant" },
+  { "posh": "rupin" },
+  { "to leverage": "tirer parti" },
+  { "leverage": "influence" },
+  { "silly": "idiot" },
+  { "fool": "imbécile" },
+  { "foolish": "insencé" },
+  { "to comply": "se conformer" },
+  { "milestone": "étape importante" }
 ]
