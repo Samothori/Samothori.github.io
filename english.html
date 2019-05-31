@@ -8,7 +8,7 @@
   <body>
     <header><h1>Test your knowledges</h1></header>
     <main>
-      <h2>Give the good answer !</h2>
+      <p class="number"></p>
       <div id="choix">
         <label
           ><input type="radio" name="langue" value="en" checked />English to
@@ -71,6 +71,7 @@
         request.onload = function() {
           vocabulaire = request.response;
           console.log(vocabulaire);
+          document.querySelector('.number').innerText = vocabulaire.length;
           mot();
         };
         document
