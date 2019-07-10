@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Random & custom</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .bggrid {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+          'a b c'
+          'd e f'
+          'g h i';
+        /*grid-auto-flow: dense;*/
+        height: 100vh;
+        width: 100vw;
+      }
+      span {
+        background-image: url(joconde.jpg);
+        background-size: 33vw 33vh;
+        background-blend-mode: exclusion;
+        background-size: 100vw;
+        width: 33.33vw;
+        height: 33.33vh;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      img {
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        width: 30vw;
+        height: 20vh;
+        object-fit: contain;
+        background-color: white;
+      }
+      @media screen and (max-width: 600px) {
+        img {
+          margin-left: 10vw;
+          width: 80vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bggrid">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!--<img src="random-custom.svg" alt="random & custom" />-->
+    <main>
+      <p>
+        <a href="http://www.google.be">information à propos du stagiaire</a>
+      </p>
+    </main>
+    <script>
+      let grille = document.querySelector('.bggrid');
+      let span = grille.querySelectorAll('span');
+      let tab_valeur = [];
+      let tab_suffle = [];
+      let tab_lettres = ['', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
+      let num_item = null;
+      function maj() {
+        tab_valeur = [];
+        tab_suffle = [];
+
+        for (let j = 0; j <= span.length - 1; j++) {
+          tab_valeur.push(j);
+          span[j].dataset.num = j + 1;
+        }
+        while (tab_valeur.length > 0) {
+          let aleatoire = Math.floor(Math.random() * tab_valeur.length);
+
+          tab_suffle.push(tab_valeur.splice(aleatoire, 1).toString());
+        }
+
+        let i = 1;
+        for (let j = 0; j <= span.length - 1; j++) {
+          span[tab_suffle[j]].style.backgroundPosition =
+            '-' + span[j].offsetLeft + 'px -' + span[j].offsetTop + 'px';
+
+          span[tab_suffle[j]].style.backgroundColor =
+            'hsl(' + i * 3.6 + ', 80%, 70%)';
+          i++;
+        }
+      }
+      maj();
+
+      grille.addEventListener('click', function(e) {
+        if (e.target != grille) {
+          e.target.style.backgroundColor = 'black';
+          e.target.style.backgroundBlendMode = 'normal';
+          console.log(e.target.style);
+          if (num_item == null) {
+            // on va récupérer le num de l'élément surlequel on vient de cliquer
+            num_item = e.target.dataset.num;
+            ancien_item = e.target;
+          } else {
+            // on déplace l'ancien élément à la place du nouveau
+            ancien_item.style.gridArea = tab_lettres[e.target.dataset.num];
+            ancien_item.dataset.num = e.target.dataset.num;
+            e.target.dataset.num = num_item;
+            e.target.style.gridArea = tab_lettres[num_item];
+            num_item = null;
+          }
+        }
+      });
+
+      grille.addEventListener('dblclick', function(e) {
+        maj();
+      });
+    </script>
+  </body>
+</html>
