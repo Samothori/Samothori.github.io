@@ -35,43 +35,21 @@
       v4
     </header>
     <span id="velocityx"></span>
-    <span id="velocityy"></span>
-    <span id="velocityz"></span>
+
     <div id="d1">MOTION DESIGN</div>
     <div id="d2"></div>
 
     <script>
       //let gyroscope = new Gyroscope({ frequency: 3 });
       let velocityx = document.querySelector('#velocityx');
-      let velocityy = document.querySelector('#velocityy');
-      let velocityz = document.querySelector('#velocityz');
+
       let d1 = document.querySelector('#d1');
       let d2 = document.querySelector('#d2');
-      /*
-            gyroscope.addEventListener('reading', e => {
-              velocityx.innerHTML = gyroscope.x;
-              velocityy.innerHTML = gyroscope.y;
-              velocityz.innerHTML = gyroscope.z;
-              /*if (gyroscope.x < 0) {
-                d1.style.top = '10px';
-                d1.style.backgroundColor = 'yellow';
-              }
-              if (gyroscope.x > 0) {
-                d1.style.top = '95%';
-                d1.style.backgroundColor = 'red';
-              }
-              if (gyroscope.y < 0) d1.style.left = '10px';
-              if (gyroscope.y > 0) d1.style.left = '95%';
-              console.log('Angular velocity along the X-axis ' + gyroscope.x);
-              console.log('Angular velocity along the Y-axis ' + gyroscope.y);
-              console.log('Angular velocity along the Z-axis ' + gyroscope.z);
-            });
-            gyroscope.start();
-      */
 
-      let maxX = window.innerWidth - d1.clientWidth / 2,
-        maxY = window.innerHeight - d1.clientHeight / 2;
+      let maxX = window.innerWidth - d1.clientWidth,
+        maxY = window.innerHeight - d1.clientHeight;
 
+      // ex 320px - 200 = 120px
       function handleOrientation(event) {
         var x = event.beta, // En degré sur l'interval [-180,180].
           y = event.gamma; // En degré sur l'interval [-90,90].
@@ -89,15 +67,12 @@
         }
         // Pour rendre le calcul plus simple.
         // On délimite l'intervalle de x et y sur [0, 180].
-        x += 90;
-        y += 90;
+        /* x += 90;
+        y += 90;*/
 
-        // 10 est la moitié de la taille de la balle.
-        // Cela centre le point de positionnement au centre de la balle.
-
-        d1.style.top = (maxX * x) / 180 + 'px';
-        d1.style.left = (maxY * y) / 180 + 'px';
-        d2.style.top = -(maxX * x) / 180 + 'px';
+        d1.style.top = maxX / 2 + ((maxX / 2) * x) / 90 + 'px';
+        d1.style.left = maxX / 2 + ((maxX / 2) * y) / 90 + 'px';
+        d2.style.top = -(maxX * x) / 90 + 'px';
         d2.style.left = -(maxY * y) / 180 + 'px';
       }
 
