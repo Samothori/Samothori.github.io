@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <style>
+      body {
+        overflow: hidden;
+      }
       span {
         display: block;
       }
@@ -26,8 +29,15 @@
         left: 20%;
         width: 60%;
         min-height: 200px;
-        word-break: break-all;
-        font-size: 4rem;
+      }
+      #d3 {
+        background-color: orange;
+        position: absolute;
+        top: 0;
+        left: 20%;
+        width: 60%;
+        min-height: 200px;
+        z-index: -3;
       }
     </style>
   </head>
@@ -35,12 +45,14 @@
     <span id="orientation"></span>
     <div id="d1">Device Orientation</div>
     <div id="d2"></div>
+    <div id="d3"></div>
 
     <script>
       let orientation = document.querySelector('#orientation');
 
       let d1 = document.querySelector('#d1');
       let d2 = document.querySelector('#d2');
+      let d3 = document.querySelector('#d3');
 
       let maxX = window.innerWidth - d1.clientWidth,
         maxY = window.innerHeight - d1.clientHeight;
@@ -69,6 +81,9 @@
 
         d2.style.top = maxY2 / 2 - ((maxY2 / 2) * x) / 90 + 'px';
         d2.style.left = maxX2 / 2 - ((maxX2 / 2) * y) / 90 + 'px';
+
+        d3.style.top = maxY2 / 2 - (maxY2 * x) / 90 + 'px';
+        d3.style.left = maxX2 / 2 - (maxX2 * y) / 90 + 'px';
       }
 
       window.addEventListener('deviceorientation', handleOrientation);
