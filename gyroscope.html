@@ -9,21 +9,40 @@
       span {
         display: block;
       }
+
+      div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+      }
     </style>
   </head>
   <body>
     <span id="velocityx"></span>
     <span id="velocityy"></span>
     <span id="velocityz"></span>
+    <div id="1"></div>
+    <div id="2"></div>
+    <div id="3"></div>
     <script>
       let gyroscope = new Gyroscope({ frequency: 60 });
       let velocityx = document.querySelector('#velocityx');
       let velocityy = document.querySelector('#velocityy');
       let velocityz = document.querySelector('#velocityz');
+      let d1 = document.querySelector('#1');
+      let d2 = document.querySelector('#2');
+      let d3 = document.querySelector('#3');
       gyroscope.addEventListener('reading', e => {
         velocityx.innerHTML = gyroscope.x;
         velocityy.innerHTML = gyroscope.y;
         velocityz.innerHTML = gyroscope.z;
+        if (gyroscope.x < 0) d1.style.top = '10px';
+        if (gyroscope.x > 0) d1.style.top = '95%';
+        if (gyroscope.y < 0) d1.style.left = '10px';
+        if (gyroscope.y > 0) d1.style.left = '95%';
         console.log('Angular velocity along the X-axis ' + gyroscope.x);
         console.log('Angular velocity along the Y-axis ' + gyroscope.y);
         console.log('Angular velocity along the Z-axis ' + gyroscope.z);
