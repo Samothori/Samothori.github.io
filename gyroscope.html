@@ -9,11 +9,6 @@
       body {
         overflow: hidden;
       }
-      #orientation {
-        display: block;
-        font-size: 10px;
-        color: #555;
-      }
 
       #d1 {
         position: absolute;
@@ -42,14 +37,11 @@
     </style>
   </head>
   <body>
-    <span id="orientation"></span>
     <div id="d1">Device Orientation</div>
     <div id="d2"></div>
     <div id="d3"></div>
 
     <script>
-      let orientation = document.querySelector('#orientation');
-
       let d1 = document.querySelector('#d1');
       let d2 = document.querySelector('#d2');
       let d3 = document.querySelector('#d3');
@@ -63,9 +55,6 @@
       function handleOrientation(event) {
         var x = event.beta,
           y = event.gamma;
-
-        orientation.innerHTML = 'x : ' + x + '<br />';
-        orientation.innerHTML += 'y: ' + y + '<br />';
 
         if (x > 90) {
           x = 90;
