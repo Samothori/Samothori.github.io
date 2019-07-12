@@ -32,7 +32,7 @@
   </head>
   <body>
     <header>
-      v5
+      v6
     </header>
     <span id="velocityx"></span>
 
@@ -48,6 +48,9 @@
 
       let maxX = window.innerWidth - d1.clientWidth,
         maxY = window.innerHeight - d1.clientHeight;
+
+      let maxX2 = window.innerWidth - d2.clientWidth,
+        maxY2 = window.innerHeight - d2.clientHeight;
 
       // ex 320px - 200 = 120px
       function handleOrientation(event) {
@@ -72,8 +75,9 @@
 
         d1.style.top = maxX / 2 + ((maxX / 2) * x) / 90 + 'px';
         d1.style.left = maxX / 2 + ((maxX / 2) * y) / 90 + 'px';
-        d2.style.top = -(maxX * x) / 90 + 'px';
-        d2.style.left = -(maxY * y) / 180 + 'px';
+
+        d2.style.top = maxX2 / 2 - ((maxX2 / 2) * x) / 90 + 'px';
+        d2.style.left = maxX2 / 2 - ((maxX2 / 2) * y) / 90 + 'px';
       }
 
       window.addEventListener('deviceorientation', handleOrientation);
