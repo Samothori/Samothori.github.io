@@ -40,14 +40,14 @@
         velocityx.innerHTML = gyroscope.x;
         velocityy.innerHTML = gyroscope.y;
         velocityz.innerHTML = gyroscope.z;
-        if (gyroscope.x < 0) {
+        /*if (gyroscope.x < 0) {
           d1.style.top = '10px';
           d1.style.backgroundColor = 'yellow';
         }
         if (gyroscope.x > 0) {
           d1.style.top = '95%';
           d1.style.backgroundColor = 'red';
-        }
+        }*/
         if (gyroscope.y < 0) d1.style.left = '10px';
         if (gyroscope.y > 0) d1.style.left = '95%';
         console.log('Angular velocity along the X-axis ' + gyroscope.x);
