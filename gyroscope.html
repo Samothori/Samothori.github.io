@@ -23,7 +23,7 @@
   </head>
   <body>
     <header>
-      v1
+      v2
     </header>
     <span id="velocityx"></span>
     <span id="velocityy"></span>
@@ -58,8 +58,8 @@
             gyroscope.start();
       */
 
-      let maxX = window.innerWidth - d1.clientWidth,
-        maxY = window.innerHeight - d1.clientHeight;
+      let maxX = window.innerWidth - d1.clientWidth / 2,
+        maxY = window.innerHeight - d1.clientHeight / 2;
 
       function handleOrientation(event) {
         var x = event.beta, // En degré sur l'interval [-180,180].
