@@ -33,26 +33,59 @@
       let velocityy = document.querySelector('#velocityy');
       let velocityz = document.querySelector('#velocityz');
       let d1 = document.querySelector('#d1');
+      /*
+            gyroscope.addEventListener('reading', e => {
+              velocityx.innerHTML = gyroscope.x;
+              velocityy.innerHTML = gyroscope.y;
+              velocityz.innerHTML = gyroscope.z;
+              /*if (gyroscope.x < 0) {
+                d1.style.top = '10px';
+                d1.style.backgroundColor = 'yellow';
+              }
+              if (gyroscope.x > 0) {
+                d1.style.top = '95%';
+                d1.style.backgroundColor = 'red';
+              }
+              if (gyroscope.y < 0) d1.style.left = '10px';
+              if (gyroscope.y > 0) d1.style.left = '95%';
+              console.log('Angular velocity along the X-axis ' + gyroscope.x);
+              console.log('Angular velocity along the Y-axis ' + gyroscope.y);
+              console.log('Angular velocity along the Z-axis ' + gyroscope.z);
+            });
+            gyroscope.start();
+      */
 
-      gyroscope.addEventListener('reading', e => {
-        velocityx.innerHTML = gyroscope.x;
-        velocityy.innerHTML = gyroscope.y;
-        velocityz.innerHTML = gyroscope.z;
-        /*if (gyroscope.x < 0) {
-          d1.style.top = '10px';
-          d1.style.backgroundColor = 'yellow';
+      let maxX = window.innerWidth - d1.clientWidth,
+        maxY = window.innerHeight - d1.clientHeight;
+
+      function handleOrientation(event) {
+        var x = event.beta, // En degré sur l'interval [-180,180].
+          y = event.gamma; // En degré sur l'interval [-90,90].
+
+        velocityx.innerHTML = 'beta : ' + x + '<br />';
+        velocityx.innerHTML += 'gamma: ' + y + '<br />';
+
+        // Parce-que l'on ne veut pas avoir l'appareil à l'envers.
+        // On restreint les valeurs de x à l'intervalle [-90,90].
+        if (x > 90) {
+          x = 90;
         }
-        if (gyroscope.x > 0) {
-          d1.style.top = '95%';
-          d1.style.backgroundColor = 'red';
-        }*/
-        if (gyroscope.y < 0) d1.style.left = '10px';
-        if (gyroscope.y > 0) d1.style.left = '95%';
-        console.log('Angular velocity along the X-axis ' + gyroscope.x);
-        console.log('Angular velocity along the Y-axis ' + gyroscope.y);
-        console.log('Angular velocity along the Z-axis ' + gyroscope.z);
-      });
-      gyroscope.start();
+        if (x < -90) {
+          x = -90;
+        }
+        // Pour rendre le calcul plus simple.
+        // On délimite l'intervalle de x et y sur [0, 180].
+        x += 90;
+        y += 90;
+
+        // 10 est la moitié de la taille de la balle.
+        // Cela centre le point de positionnement au centre de la balle.
+
+        d1.style.top = (maxX * x) / 180 - 10 + 'px';
+        d1.style.left = (maxY * y) / 180 - 10 + 'px';
+      }
+
+      window.addEventListener('deviceorientation', handleOrientation);
     </script>
   </body>
 </html>
