@@ -32,17 +32,12 @@
     </style>
   </head>
   <body>
-    <header>
-      v6.1
-    </header>
-    <span id="velocityx"></span>
-
+    <span id="orientation"></span>
     <div id="d1">MOTION DESIGN</div>
     <div id="d2"></div>
 
     <script>
-      //let gyroscope = new Gyroscope({ frequency: 3 });
-      let velocityx = document.querySelector('#velocityx');
+      let orientation = document.querySelector('#orientation');
 
       let d1 = document.querySelector('#d1');
       let d2 = document.querySelector('#d2');
@@ -53,13 +48,12 @@
       let maxX2 = window.innerWidth - d2.clientWidth,
         maxY2 = window.innerHeight - d2.clientHeight;
 
-      // ex 320px - 200 = 120px
       function handleOrientation(event) {
-        var x = event.beta, // En degré sur l'interval [-180,180].
-          y = event.gamma; // En degré sur l'interval [-90,90].
+        var x = event.beta,
+          y = event.gamma;
 
-        velocityx.innerHTML = 'beta : ' + x + '<br />';
-        velocityx.innerHTML += 'gamma: ' + y + '<br />';
+        orientation.innerHTML = 'x : ' + x + '<br />';
+        orientation.innerHTML += 'y: ' + y + '<br />';
 
         // Parce-que l'on ne veut pas avoir l'appareil à l'envers.
         // On restreint les valeurs de x à l'intervalle [-90,90].
@@ -69,10 +63,6 @@
         if (x < -90) {
           x = -90;
         }
-        // Pour rendre le calcul plus simple.
-        // On délimite l'intervalle de x et y sur [0, 180].
-        /* x += 90;
-        y += 90;*/
 
         d1.style.top = maxX / 2 + ((maxX / 2) * x) / 90 + 'px';
         d1.style.left = maxX / 2 + ((maxX / 2) * y) / 90 + 'px';
