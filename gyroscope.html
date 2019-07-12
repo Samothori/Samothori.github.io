@@ -24,17 +24,17 @@
     <span id="velocityx"></span>
     <span id="velocityy"></span>
     <span id="velocityz"></span>
-    <div id="1"></div>
-    <div id="2"></div>
-    <div id="3"></div>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
     <script>
       let gyroscope = new Gyroscope({ frequency: 5 });
       let velocityx = document.querySelector('#velocityx');
       let velocityy = document.querySelector('#velocityy');
       let velocityz = document.querySelector('#velocityz');
-      let d1 = document.querySelector('#1');
-      let d2 = document.querySelector('#2');
-      let d3 = document.querySelector('#3');
+      let d1 = document.querySelector('#d1');
+      let d2 = document.querySelector('#d2');
+      let d3 = document.querySelector('#d3');
       gyroscope.addEventListener('reading', e => {
         velocityx.innerHTML = gyroscope.x;
         velocityy.innerHTML = gyroscope.y;
