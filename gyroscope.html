@@ -28,7 +28,7 @@
     <div id="d1">MOTION DESIGN</div>
 
     <script>
-      let gyroscope = new Gyroscope({ frequency: 3 });
+      //let gyroscope = new Gyroscope({ frequency: 3 });
       let velocityx = document.querySelector('#velocityx');
       let velocityy = document.querySelector('#velocityy');
       let velocityz = document.querySelector('#velocityz');
@@ -81,8 +81,8 @@
         // 10 est la moitié de la taille de la balle.
         // Cela centre le point de positionnement au centre de la balle.
 
-        d1.style.top = (maxX * x) / 180 - 10 + 'px';
-        d1.style.left = (maxY * y) / 180 - 10 + 'px';
+        d1.style.top = (maxX * x) / 180 + 'px';
+        d1.style.left = (maxY * y) / 180 + 'px';
       }
 
       window.addEventListener('deviceorientation', handleOrientation);
