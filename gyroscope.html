@@ -9,7 +9,7 @@
       body {
         overflow: hidden;
       }
-      span {
+      #orientation {
         display: block;
         font-size: 10px;
         color: #555;
@@ -23,6 +23,7 @@
         word-break: break-all;
         font-size: 4rem;
         z-index: 3;
+        transition: all 0.5s ease;
       }
       #d2 {
         background-color: yellow;
@@ -67,8 +68,6 @@
         orientation.innerHTML = 'x : ' + x + '<br />';
         orientation.innerHTML += 'y: ' + y + '<br />';
 
-        // Parce-que l'on ne veut pas avoir l'appareil à l'envers.
-        // On restreint les valeurs de x à l'intervalle [-90,90].
         if (x > 90) {
           x = 90;
         }
