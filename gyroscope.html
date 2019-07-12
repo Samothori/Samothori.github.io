@@ -10,10 +10,18 @@
         display: block;
       }
 
-      div {
-        background-color: #eee;
+      #d1 {
         position: absolute;
-        top: 10%;
+        top: 0;
+        left: 20%;
+        width: 60%;
+        word-break: break-all;
+        font-size: 5rem;
+      }
+      #d2 {
+        background-color: yellow;
+        position: absolute;
+        top: 0;
         left: 20%;
         width: 60%;
         word-break: break-all;
@@ -29,6 +37,7 @@
     <span id="velocityy"></span>
     <span id="velocityz"></span>
     <div id="d1">MOTION DESIGN</div>
+    <div id="d2"></div>
 
     <script>
       //let gyroscope = new Gyroscope({ frequency: 3 });
@@ -36,6 +45,7 @@
       let velocityy = document.querySelector('#velocityy');
       let velocityz = document.querySelector('#velocityz');
       let d1 = document.querySelector('#d1');
+      let d2 = document.querySelector('#d2');
       /*
             gyroscope.addEventListener('reading', e => {
               velocityx.innerHTML = gyroscope.x;
@@ -86,6 +96,8 @@
 
         d1.style.top = (maxX * x) / 180 + 'px';
         d1.style.left = (maxY * y) / 180 + 'px';
+        d2.style.top = -(maxX * x) / 180 + 'px';
+        d2.style.left = -(maxY * y) / 180 + 'px';
       }
 
       window.addEventListener('deviceorientation', handleOrientation);
