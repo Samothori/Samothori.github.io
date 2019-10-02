@@ -449,7 +449,7 @@
   { "hints": "astuces" },
   { "grooming": "toilettage" },
   { "to deprive of": "priver de" },
-  { "to tailor": "faise sur mesure" },
+  { "to tailor": "faire sur mesure" },
   { "tailoring": "adaptation" },
   { "tailored": "adapté" },
   { "to yield": "produire" },
@@ -478,5 +478,14 @@
   { "to assess": "évaluer" },
   { "lazy": "paresseux" },
   { "sloppy": "négligé" },
-  { "offbeat": "décalé" }
+  { "offbeat": "décalé" },
+  { "bearing": "rapport" },
+  { "blaring": "hurlant" },
+  { "relentlessly": "sans discontinuer" },
+  { "keep sth at bay": "tenir à distance" },
+  { "revered": "vénéré" },
+  { "reviled": "insulté" },
+  { "impede": "entraver" },
+  { "to brag": "se vanter" },
+  { "bragging": "vantardise" }
 ]
