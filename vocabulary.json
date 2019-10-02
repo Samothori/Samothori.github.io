@@ -487,5 +487,7 @@
   { "reviled": "insulté" },
   { "impede": "entraver" },
   { "to brag": "se vanter" },
-  { "bragging": "vantardise" }
+  { "bragging": "vantardise" },
+  { "perks": "avantages" },
+  { "cons": "inconvénients" }
 ]
