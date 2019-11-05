@@ -536,5 +536,12 @@
   { "stalker": "harcelleur" },
   { "to stalk": "traquer" },
   { "outburst": "explosion" },
-  { "infamous": "infame" }
+  { "infamous": "infame" },
+  { "pint-sized": "plus petit qu'attendu" },
+  { "eviction": "expulsion" },
+  { "to storm into": "prendre d'assaut" },
+  { "to shriek": "crier" },
+  { "a gown": "une robe" },
+  { "to utter": "prononcer" },
+  { "shy": "timide" }
 ]
