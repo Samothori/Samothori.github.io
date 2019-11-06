@@ -545,5 +545,6 @@
   { "to utter": "prononcer" },
   { "shy": "timide" },
   { "disclosure": "révélation" },
-  { "to disclose": "divulger" }
+  { "to disclose": "divulger" },
+  { "tweaks": "ajustements" }
 ]
